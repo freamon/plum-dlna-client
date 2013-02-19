@@ -1,0 +1,18 @@
+# Global Settings
+targetapp=PLUM
+filepath=/media/
+
+# Command Settings
+
+# Extension Settings
+[mkv;mp4;avi;ogm;mpg;flv;ogg;ogv;webm;f4v;mpeg;ts;m2ts;vob;wmv;divx;m4v;mov;asf;qt]
+exepath=/mnt/utmp/plum/smplayer2.sh
+extarg=;0;Filename Do not Edit;%filename%
+[object.item.videoitem.movie;object.item.videoitem]
+exepath=/mnt/utmp/plum/smplayer2.sh
+extarg=;0;Filename Do not Edit;%filename%
+[object.item.audioitem;object.item.audioitem.musictrack]
+exepath=/mnt/utmp/plum/audacious2.sh
+extarg=;0;Filename Do not Edit;%filename%
+
+# Custom Entries Settings
