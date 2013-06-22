@@ -82,7 +82,7 @@ size_t readcb(void *ptr, size_t size, size_t nitems, void *stream)
 	return len;
 }
 
-void* functionD(void*)
+void* DownloadArtwork(void*)
 {
 	CURL *curl;
     FILE *fp;
@@ -118,7 +118,7 @@ void* functionD(void*)
 	
 }
 
-void* functionC(void*)
+void* SearchForMediaServers(void*)
 {
 	/* this should open targets.data for ST */
 	/* if (useFavouriteServer == true)  {
@@ -302,7 +302,7 @@ void CPlum::Reset()
 	int rc1;
 	pthread_t thread1;
 	
-	if( (rc1=pthread_create( &thread1, NULL, functionC, NULL)) )  {
+	if( (rc1=pthread_create( &thread1, NULL, SearchForMediaServers, NULL)) )  {
 		printf("Thread creation failed: %d\n", rc1);
 	}
 	
@@ -564,7 +564,7 @@ void CPlum::BrowseActiveMediaServer()
 		if (artworkDownloadStack.empty() == false)  {
 			//printf("vector full of artwork\n");
 		
-			if( (rc1=pthread_create( &thread2, NULL, functionD, NULL)) )  {
+			if( (rc1=pthread_create( &thread2, NULL, DownloadArtwork, NULL)) )  {
 				printf("function D - Thread creation failed: %d\n", rc1);
 			} else
 				downloadThreadActive = true;
