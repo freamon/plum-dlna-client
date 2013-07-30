@@ -378,6 +378,13 @@ bool CPlum::CheckResponses(void)
 		//printf("buffer is %s\n", buffer1);
 			
 		char* p = strstr(buffer1, "LOCATION: ");
+		if (p == NULL)
+			p = strstr(buffer1, "Location: ");
+			
+		if (p == NULL)  {
+			//printf("p is still null\n");
+			return false;
+		}
 		p+=10;
 		char* q = p;
 		while (*q != '\r')
